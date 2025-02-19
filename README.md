@@ -189,8 +189,8 @@ resource "aws_s3_object" "error_html" {
 
 ## Cuarta Parte
 
-1. Nos dirigimos a la carpeta raíz ```bash terraform-static-guille``` y ahí iniciamos en la terminal ```bash [terraform init](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Iniciando%20terraform.png)``` que nos descargará los plugins necesarios.
-2. Podemos usar ```bash terraform plan``` para ver los recursos que se van a crear.
+1. Nos dirigimos a la carpeta raíz ```bash terraform-static-guille``` y ahí iniciamos en la terminal ```bash terraform init``` que nos descargará los plugins necesarios.[Iniciando Terraform](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Iniciando%20terraform.png)
+2. Podemos usar ```bash terraform plan``` para ver los [recursos](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Plan%20de%20Terraform.png) que se van a crear.
 3. Si usamos ```bash terraform fmt``` corregiremos errores de sintaxis y con ```terraform validate``` validamos que este todo correcto.
 4. Desplegamos la aplicacion con ```bash terrafrom apply``` y damos ```bash yes``` para confirmarlo cuando nos lo solicite.[Desplegando](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Despliegue%20de%20aplicacion.png)
 5. Cuando se haya desplegado Terraform nos mostrará el output website, copiaremos la URL y accederemos a nuestro navegador (recomendable en incognito) y la pegamos para verificar que el [despliegue ha sido correcto](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Aplicacion%20funcionando.png)
