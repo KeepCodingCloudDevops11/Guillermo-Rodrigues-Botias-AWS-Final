@@ -19,7 +19,7 @@ Los requisistos previos son:
 
  ## Segunda Parte
 
-Tendremos que crear una carpeta donde iremos creando nuestros archivos necesarios para que nuestra aplicación funcione, dejandonos la siguiente [estructura]()
+Tendremos que crear una carpeta donde iremos creando nuestros archivos necesarios para que nuestra aplicación funcione, dejandonos la siguiente [estructura](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Estructura.png)
 
 ```bash
 .gitignore – Archivo que indica qué se debe ignorar en Git.
@@ -189,10 +189,10 @@ resource "aws_s3_object" "error_html" {
 
 ## Cuarta Parte
 
-1. Nos dirigimos a la carpeta raíz ```bash terraform-static-guille``` y ahí iniciamos en la terminal ```bash terraform init``` que nos descargará los plugins necesarios.
+1. Nos dirigimos a la carpeta raíz ```bash terraform-static-guille``` y ahí iniciamos en la terminal ```bash [terraform init](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Iniciando%20terraform.png)``` que nos descargará los plugins necesarios.
 2. Podemos usar ```bash terraform plan``` para ver los recursos que se van a crear.
 3. Si usamos ```bash terraform fmt``` corregiremos errores de sintaxis y con ```terraform validate``` validamos que este todo correcto.
-4. Desplegamos la aplicacion con ```bash terrafrom apply``` y damos ```bash yes``` para confirmarlo cuando nos lo solicite. 
-5. Cuando se haya desplegado Terraform nos mostrará el output website, copiaremos la URL y accederemos a nuestro navegador (recomendable en incognito) y la pegamos para verificar que el [despliegue ha sido correcto]()
+4. Desplegamos la aplicacion con ```bash terrafrom apply``` y damos ```bash yes``` para confirmarlo cuando nos lo solicite.[Desplegando](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Despliegue%20de%20aplicacion.png)
+5. Cuando se haya desplegado Terraform nos mostrará el output website, copiaremos la URL y accederemos a nuestro navegador (recomendable en incognito) y la pegamos para verificar que el [despliegue ha sido correcto](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Aplicacion%20funcionando.png)
 6. También podemos acceder desde la cloud de AWS en el apartado de S3 para verificar los recursos creados, y ver las URLs.
 7. Con ```bash terrafrom destroy``` podemos eliminar todos los recursos creados.
