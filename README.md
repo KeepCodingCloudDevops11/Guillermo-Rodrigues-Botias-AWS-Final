@@ -14,8 +14,8 @@ Práctica final módulo AWS Guillermo Rodrigues Botias
 
 Los requisistos previos son:
 
-* 1. Instalaremos Terraform y comprobaremos su versión para verificarlo con ```bash terraform version```
-* 2. Debemos tener una cuenta de AWS activa, una vez la tengamos instalada, configuramos AWS CLI con ```bash aws configure```, nos pedirá ingresar **Acces Key** y **Secret Key** y definiremos nuestra region, en este caso **eu-west-1**
+1. Instalaremos Terraform y comprobaremos su versión para verificarlo con ```bash terraform version```
+2. Debemos tener una cuenta de AWS activa, una vez la tengamos instalada, configuramos AWS CLI con ```bash aws configure```, nos pedirá ingresar **Acces Key** y **Secret Key** y definiremos nuestra region, en este caso **eu-west-1**
 
  ## Segunda Parte
 
