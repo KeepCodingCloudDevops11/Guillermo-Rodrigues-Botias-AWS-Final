@@ -14,8 +14,8 @@ Práctica final módulo AWS Guillermo Rodrigues Botias
 
 Los requisistos previos son:
 
-1. Instalaremos Terraform y comprobaremos su versión para verificarlo con ```bash terraform version```
-2. Debemos tener una cuenta de AWS activa, una vez la tengamos instalada, configuramos AWS CLI con ```bash aws configure```, nos pedirá ingresar **Acces Key** y **Secret Key** y definiremos nuestra region, en este caso **eu-west-1**
+1. Instalaremos Terraform y comprobaremos su versión para verificarlo con ```terraform version```
+2. Debemos tener una cuenta de AWS activa, una vez la tengamos instalada, configuramos AWS CLI con ```aws configure```, nos pedirá ingresar **Acces Key** y **Secret Key** y definiremos nuestra region, en este caso **eu-west-1**
 
  ## Segunda Parte
 
@@ -53,7 +53,7 @@ Una vez creado todo nos dirigimos a la carpeta raíz para trabajar desde allí.
 
 * A continuación veremos el contenido de cada uno de los archivos que debemos crear:
   
-1. Archivo ```bash provider.tf ``` que nos definirá el provider de AWS y la región.
+1. Archivo ```provider.tf ``` que nos definirá el provider de AWS y la región.
 
 ```bash
 # provider.tf
@@ -62,7 +62,7 @@ provider "aws" {
   region = "eu-west-1"
 }
 ```
-2. Archivo ```bash random.tf```, lo utilizamos para generar un sufijo aleatorio y así asegurarnos de que el nombre del bucket sea único globalmente.
+2. Archivo ```random.tf```, lo utilizamos para generar un sufijo aleatorio y así asegurarnos de que el nombre del bucket sea único globalmente.
 
 ```bash
 # random.tf
@@ -72,7 +72,7 @@ resource "random_id" "bucket_suffix" {
 }
 ```
 
-3. Archivo ```bash s3_bucket.tf``` que nos servirá para servir como website estático y la política para permitir acceso público a sus objetos.
+3. Archivo ```s3_bucket.tf``` que nos servirá para servir como website estático y la política para permitir acceso público a sus objetos.
 
 ```bash
 # s3_bucket.tf
@@ -134,7 +134,7 @@ resource "aws_s3_bucket_policy" "static_site_bucket_policy" {
 }
 ```
 
-4. Archivo ```bash outputs.tf``` para definir un output que muestre el endpoint del nuestro sitio web, lo que nos puede servir para probar.
+4. Archivo ```outputs.tf``` para definir un output que muestre el endpoint del nuestro sitio web, lo que nos puede servir para probar.
 
 ```bash
 # outputs.tf
@@ -145,7 +145,7 @@ output "website_endpoint" {
 }
 ```
 
-5. Archivo ```bash main.tf```, podremosusarlo como archivo común e incluir comentarios sobre el proyecto.
+5. Archivo ```main.tf```, podremosusarlo como archivo común e incluir comentarios sobre el proyecto.
 
 ```bash
 # main.tf
@@ -189,10 +189,10 @@ resource "aws_s3_object" "error_html" {
 
 ## Cuarta Parte
 
-1. Nos dirigimos a la carpeta raíz ``` bash terraform-static-guille``` y ahí iniciamos en la terminal ``` bash terraform init``` que nos descargará los plugins necesarios.[Iniciando Terraform](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Iniciando%20terraform.png)
-2. Podemos usar ``` bash terraform plan``` para ver los [recursos](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Plan%20de%20Terraform.png) que se van a crear.
-3. Si usamos ``` bash terraform fmt``` corregiremos errores de sintaxis y con ``` bash terraform validate``` validamos que este todo correcto.
-4. Desplegamos la aplicacion con ``` bash terrafrom apply``` y damos ``` bash yes``` para confirmarlo cuando nos lo solicite.[Desplegando](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Despliegue%20de%20aplicacion.png)
+1. Nos dirigimos a la carpeta raíz ```terraform-static-guille``` y ahí iniciamos en la terminal ```terraform init``` que nos descargará los plugins necesarios.[Iniciando Terraform](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Iniciando%20terraform.png)
+2. Podemos usar ```terraform plan``` para ver los [recursos](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Plan%20de%20Terraform.png) que se van a crear.
+3. Si usamos ```terraform fmt``` corregiremos errores de sintaxis y con ```terraform validate``` validamos que este todo correcto.
+4. Desplegamos la aplicacion con ```terrafrom apply``` y damos ```yes``` para confirmarlo cuando nos lo solicite.[Desplegando](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Despliegue%20de%20aplicacion.png)
 5. Cuando se haya desplegado Terraform nos mostrará el output website, copiaremos la URL y accederemos a nuestro navegador (recomendable en incognito) y la pegamos para verificar que el [despliegue ha sido correcto](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Aplicacion%20funcionando.png)
 6. También podemos acceder desde la cloud de AWS en el apartado de S3 para verificar los recursos creados, y ver las URLs.
-7. Con ``` bash terrafrom destroy``` podemos eliminar todos los recursos creados.
+7. Con ```terrafrom destroy``` podemos eliminar todos los recursos creados.
