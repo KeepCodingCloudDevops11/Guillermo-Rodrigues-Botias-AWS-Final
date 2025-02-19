@@ -10,7 +10,7 @@ Práctica final módulo AWS Guillermo Rodrigues Botias
 
  ## Primera Parte
 
- A continuación vamos a desplegar un website estático en un bucket s3 en Irlanda a tráves de Terraform.
+ A continuación vamos a desplegar un website estático en un bucket s3 en Irlanda a tráves de Terraform, con el nombre guille-static-website.
 
 Los requisistos previos son:
 
@@ -196,3 +196,5 @@ resource "aws_s3_object" "error_html" {
 5. Cuando se haya desplegado Terraform nos mostrará el output website, copiaremos la URL y accederemos a nuestro navegador (recomendable en incognito) y la pegamos para verificar que el [despliegue ha sido correcto](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Aplicacion%20funcionando.png). Tambiién veremos en caso de [error](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Error%20de%20carga.png) al cargar un mensaje personalizado.
 6. También podemos acceder desde la [Cloud de AWS](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/AWS.png) en el apartado de S3 para verificar los recursos creados, y ver las URLs.
 7. Con ```terrafrom destroy``` podemos eliminar todos los recursos creados.
+
+* **NOTA** La aplicación ha sido destruida para no generar costes, hay que volverla a levantarla.
