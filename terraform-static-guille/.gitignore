@@ -1,0 +1,45 @@
+# ============================
+# Archivos de Estado de Terraform
+# ============================
+# Estos archivos contienen el estado actual de la infraestructura.
+# No deben subirse al repositorio porque pueden contener información sensible.
+*.tfstate
+*.tfstate.*
+
+# ============================
+# Directorio de Terraform y Archivo Lock
+# ============================
+# Este directorio se genera cuando ejecutas "terraform init" y contiene plugins y módulos descargados.
+.terraform/
+# El archivo de bloqueo (.terraform.lock.hcl) se genera automáticamente para fijar versiones.
+.terraform.lock.hcl
+
+# ============================
+# Crash Logs y Archivos de Debug
+# ============================
+# En caso de fallo, Terraform puede generar un crash.log.
+crash.log
+
+# ============================
+# Archivos Override (sobreescrituras locales)
+# ============================
+# Archivos que se usan para sobreescribir configuraciones locales.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ============================
+# Archivos de Variables y Configuración Sensible
+# ============================
+# Estos archivos pueden contener valores sensibles, por ejemplo, credenciales.
+*.tfvars
+*.tfvars.json
+
+# ============================
+# Archivos de Respaldo y Temporales
+# ============================
+# Archivos creados por editores de texto o el sistema (respaldo, temporal, etc.).
+*.backup
+*.bak
+*~
