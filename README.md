@@ -173,7 +173,48 @@ Pasos para desplegar:
 resource "aws_s3_object" "index_html" {
   bucket       = aws_s3_bucket.static_site_bucket.id
   key          = "index.html"
-  content      = "<html><head><title>Keepiando AWS con Guille</title></head><body><h1>Bienvenido keepcoder a la pagina de pruebas de Guillermo Rodrigues</h1></body></html>"
+  content      = <<EOF
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guille Website</title>
+  <style>
+    /* Estilos generales para la página */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: olive;  /* Fondo verde oliva */
+      color: yellow;            /* Letras en amarillo */
+      text-align: center;
+    }
+    /* Contenedor para centrar el contenido */
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.2); /* Opcional: un fondo semi-transparente para el contenedor */
+    }
+    /* Estilos para la imagen de perfil (si deseas agregar una) */
+    .profile-img {
+      max-width: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenido keepcoder a la página de pruebas de Guillermo Rodrigues</h1>
+     <!-- Si deseas agregar una imagen de perfil, descomenta la siguiente línea y reemplaza la URL -->
+    <!-- <img class="profile-img" src="https://via.placeholder.com/200" alt="Imagen de Perfil"> -->
+  </div>
+</body>
+</html>
+EOF
   content_type = "text/html"
 }
 
@@ -182,7 +223,45 @@ resource "aws_s3_object" "index_html" {
 resource "aws_s3_object" "error_html" {
   bucket       = aws_s3_bucket.static_site_bucket.id
   key          = "error.html"
-  content      = "<html><head><title>Error</title></head><body><h1>Disculpa keepcoder, ha ocurrido un error en la pagina de Guillermo</h1></body></html>"
+  content      = <<EOF
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error - Guille Website</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: olive;  /* Fondo verde oliva */
+      color: yellow;            /* Texto en amarillo */
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.2); /* Fondo semi-transparente */
+    }
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Error - Página No Encontrada</h1>
+    <p>Disculpa keepcoder, ha ocurrido un error en la página de Guillermo.</p>
+  </div>
+</body>
+</html>
+EOF
   content_type = "text/html"
 }
 ```
@@ -196,5 +275,3 @@ resource "aws_s3_object" "error_html" {
 5. Cuando se haya desplegado Terraform nos mostrará el output website, copiaremos la URL y accederemos a nuestro navegador (recomendable en incognito) y la pegamos para verificar que el [despliegue ha sido correcto](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Aplicacion%20funcionando.png). Tambiién veremos en caso de [error](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/Error%20de%20carga.png) al cargar un mensaje personalizado.
 6. También podemos acceder desde la [Cloud de AWS](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-AWS-Final/blob/main/terraform-static-guille/img/AWS.png) en el apartado de S3 para verificar los recursos creados, y ver las URLs.
 7. Con ```terrafrom destroy``` podemos eliminar todos los recursos creados.
-
-* **NOTA** La aplicación ha sido destruida para no generar costes, hay que volverla a levantarla.
